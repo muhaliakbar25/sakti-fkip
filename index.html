@@ -1037,50 +1037,6 @@ function validate(step) {
 }
 
 // ======= DATA SEKOLAH DAPODIK 2025 =======
-const dataSekolah = {
-  'Kolaka': {
-    'SD': ['SD Negeri 1 Kolaka','SD Negeri 2 Kolaka','SD Negeri 3 Kolaka','SD Negeri 4 Kolaka','SD Negeri 5 Kolaka','SD Negeri 6 Kolaka','SD Negeri 7 Kolaka','SD Negeri 8 Kolaka','SD Negeri 9 Kolaka','SD Negeri 10 Kolaka','SD Negeri 11 Kolaka','SD Negeri 12 Kolaka','SD Negeri 13 Kolaka','SD Negeri 14 Kolaka','SD Negeri 15 Kolaka','SD Negeri 16 Kolaka','SD Negeri 17 Kolaka','SD Negeri 18 Kolaka','SD Negeri 19 Kolaka','SD Islam Terpadu Al-Ikhlas Kolaka','SD Kartika Kolaka','SD Kristen Kolaka'],
-    'SMP': ['SMP Negeri 1 Kolaka','SMP Negeri 2 Kolaka','SMP Negeri 3 Kolaka','SMP Negeri 4 Kolaka','SMP Negeri 5 Kolaka','SMP Negeri 6 Kolaka','SMP Negeri 7 Kolaka','MTs Negeri 1 Kolaka','MTs Negeri 2 Kolaka','SMP Islam Terpadu Kolaka','SMP Kristen Kolaka','SMP Muhammadiyah Kolaka'],
-    'SMA': ['SMA Negeri 1 Kolaka','SMA Negeri 2 Kolaka','SMA Negeri 3 Kolaka','SMA Negeri 4 Kolaka','MA Negeri 1 Kolaka','SMA Muhammadiyah Kolaka','SMA Kristen Kolaka','SMA Al-Mawaddah Warahmah Kolaka','SMA Islam Terpadu Kolaka'],
-    'SMK': ['SMK Negeri 1 Kolaka','SMK Negeri 2 Kolaka','SMK Muhammadiyah Kolaka','SMK Kesehatan Kolaka','SMK Teknologi Kolaka'],
-  },
-  'Kolaka Utara': {
-    'SD': ['SD Negeri 1 Lasusua','SD Negeri 2 Lasusua','SD Negeri 3 Lasusua','SD Negeri 1 Ranteangin','SD Negeri 1 Katoi','SD Negeri 1 Pakue','SD Negeri 1 Kodeoha','SD Negeri 1 Ngapa','SD Negeri 1 Lambai','SD Negeri 1 Batu Putih'],
-    'SMP': ['SMP Negeri 1 Lasusua','SMP Negeri 2 Lasusua','SMP Negeri 3 Lasusua','SMP Negeri 4 Lasusua','SMP Negeri 5 Lasusua','SMP Negeri 1 Ranteangin','SMP Negeri 1 Pakue','SMP Negeri 1 Katoi','SMP Negeri 1 Kodeoha','SMP Negeri 1 Batu Putih','SMP Negeri 1 Porehu','MTs Swasta Darul Istiqomah Katoi'],
-    'SMA': ['SMA Negeri 1 Lasusua','SMA Negeri 1 Batu Putih','SMA Negeri 1 Kodeoha','SMA Negeri 1 Pakue','SMA Negeri 1 Ranteangin','MAN Lasusua','SMA Haji Agus Salim Katoi'],
-    'SMK': ['SMK Negeri 1 Lasusua','SMK Negeri 1 Maruge','SMK Negeri 1 Wawo','SMK Negeri 1 Watunohu'],
-  },
-  'Kolaka Timur': {
-    'SD': ['SD Negeri 1 Rate-Rate','SD Negeri 2 Rate-Rate','SD Negeri 1 Ladongi','SD Negeri 1 Tirawuta','SD Negeri 1 Lambandia','SD Negeri 1 Mowewe','SD Negeri 1 Tinondo','SD Negeri 1 Poli-Polia','SD Negeri 1 Aere'],
-    'SMP': ['SMP Negeri 1 Rate-Rate','SMP Negeri 1 Ladongi','SMP Negeri 1 Tirawuta','SMP Negeri 1 Lambandia','SMP Negeri 1 Mowewe','SMP Negeri 1 Poli-Polia','SMP Negeri 1 Tinondo','SMP Negeri 1 Aere'],
-    'SMA': ['SMA Negeri 1 Rate-Rate','SMA Negeri 1 Ladongi','SMA Negeri 1 Tirawuta','SMA Negeri 1 Lambandia','SMA Negeri 1 Mowewe'],
-    'SMK': ['SMK Negeri 1 Rate-Rate','SMK Negeri 1 Ladongi','SMK Negeri 1 Tirawuta','SMK Negeri 1 Lambandia','SMK Negeri 1 Mowewe'],
-  },
-  'Bombana': {
-    'SD': ['SD Negeri 1 Rumbia','SD Negeri 2 Rumbia','SD Negeri 1 Poleang','SD Negeri 1 Kasipute'],
-    'SMP': ['SMP Negeri 1 Rumbia','SMP Negeri 2 Rumbia','SMP Negeri 1 Poleang','SMP Negeri 1 Kasipute'],
-    'SMA': ['SMA Negeri 1 Rumbia','SMA Negeri 2 Rumbia','SMA Negeri 1 Poleang'],
-    'SMK': ['SMK Negeri 1 Rumbia','SMK Negeri 1 Poleang'],
-  },
-  'Konawe': {
-    'SD': ['SD Negeri 1 Unaaha','SD Negeri 2 Unaaha','SD Negeri 1 Wawotobi','SD Negeri 1 Sampara'],
-    'SMP': ['SMP Negeri 1 Unaaha','SMP Negeri 2 Unaaha','SMP Negeri 1 Wawotobi','SMP Negeri 1 Sampara'],
-    'SMA': ['SMA Negeri 1 Unaaha','SMA Negeri 2 Unaaha','SMA Negeri 1 Wawotobi'],
-    'SMK': ['SMK Negeri 1 Unaaha','SMK Negeri 1 Wawotobi'],
-  },
-  'Konawe Selatan': {
-    'SD': ['SD Negeri 1 Andolo','SD Negeri 1 Ranomeeto','SD Negeri 1 Moramo'],
-    'SMP': ['SMP Negeri 1 Andolo','SMP Negeri 1 Ranomeeto','SMP Negeri 1 Moramo'],
-    'SMA': ['SMA Negeri 1 Andolo','SMA Negeri 1 Ranomeeto'],
-    'SMK': ['SMK Negeri 1 Andolo','SMK Negeri 1 Ranomeeto'],
-  },
-  'Kendari': {
-    'SD': ['SD Negeri 1 Kendari','SD Negeri 2 Kendari','SD Negeri 3 Kendari','SD Negeri 4 Kendari','SD Negeri 5 Kendari','SD Negeri 6 Kendari','SD Negeri 7 Kendari','SD Negeri 8 Kendari','SD Negeri 9 Kendari','SD Negeri 10 Kendari','SD Islam Terpadu Kendari'],
-    'SMP': ['SMP Negeri 1 Kendari','SMP Negeri 2 Kendari','SMP Negeri 3 Kendari','SMP Negeri 4 Kendari','SMP Negeri 5 Kendari','SMP Negeri 6 Kendari','SMP Negeri 7 Kendari','SMP Negeri 8 Kendari','SMP Negeri 9 Kendari','MTs Negeri 1 Kendari','MTs Negeri 2 Kendari'],
-    'SMA': ['SMA Negeri 1 Kendari','SMA Negeri 2 Kendari','SMA Negeri 3 Kendari','SMA Negeri 4 Kendari','SMA Negeri 5 Kendari','SMA Negeri 6 Kendari','SMA Negeri 7 Kendari','SMA Negeri 8 Kendari','MAN 1 Kendari','MAN 2 Kendari'],
-    'SMK': ['SMK Negeri 1 Kendari','SMK Negeri 2 Kendari','SMK Negeri 3 Kendari','SMK Negeri 4 Kendari','SMK Negeri 5 Kendari','SMK Negeri 6 Kendari','SMK Negeri 7 Kendari'],
-  },
-};
 
 function updateDaftarSekolah() {
   const kab = document.getElementById('kab').value;
@@ -1093,7 +1049,7 @@ function updateDaftarSekolah() {
     emptyMsg.textContent = 'Pilih Kabupaten/Kota dan Jenjang terlebih dahulu untuk melihat daftar sekolah.';
     return;
   }
-  const sekolahList = (dataSekolah[kab] && dataSekolah[kab][jenjang]) ? dataSekolah[kab][jenjang] : [];
+  const sekolahList = [];
   dropdown.innerHTML = '<option value="">-- Pilih Sekolah --</option>';
   sekolahList.forEach(s => {
     const opt = document.createElement('option');
