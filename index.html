@@ -355,11 +355,22 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
     position: fixed;
     inset: 0;
     background-image: url('bg.png');
-    background-size: cover;
+    background-size: 55%;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0.06;
     z-index: 0;
     pointer-events: none;
+  }
+  @media(max-width:768px){
+    .hero-bg-overlay {
+      background-size: 90%;
+    }
+  }
+  @media(max-width:420px){
+    .hero-bg-overlay {
+      background-size: 95%;
+    }
   }
 
 @media(max-width:768px){
@@ -405,6 +416,7 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
 </style>
 </head>
 <body style="position:relative;">
+<div class="hero-bg-overlay"></div>
 
 <!-- TOPBAR -->
 <div class="topbar">
@@ -436,7 +448,6 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
 <!-- ======================== HOME ======================== -->
 <div id="home" class="page active">
   <div class="hero">
-    <div class="hero-bg-overlay"></div>
     <div class="hero-bg-shape s1"></div>
     <div class="hero-bg-shape s2"></div>
     <div class="hero-inner">
