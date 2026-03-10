@@ -363,7 +363,7 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
   }
 
 @media(max-width:768px){
-  #hamburger { display:flex !important; }
+  #hamburger { display:flex !important; align-items:center; }
   #navLinks { 
     display:none;
     position:absolute;
@@ -382,6 +382,25 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
   #navLinks.open { display:flex; }
   #navLinks a { padding:12px 8px; border-radius:8px; font-size:1rem; }
   .nav-cta { display:none; }
+}
+
+#hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+}
+#hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: 0.3s;
 }
 </style>
 </head>
@@ -402,12 +421,15 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
       <span>Sistem Akademik Terintegrasi</span>
     </div>
   </div>
-  <ul class="nav-links">
-    <li><a onclick="showPage('home')" id="nav-home" class="active">Beranda</a></li>
-    <li><a onclick="showPage('kebijakan')" id="nav-kebijakan">Kebijakan</a></li>
-    <li><a onclick="showPage('template')" id="nav-template">Template & Logbook</a></li>
-    <li><a onclick="showPage('status')" id="nav-status">Cek Status</a></li>
-    <li><a onclick="showForm()" id="nav-daftar" class="nav-daftar">Daftar PLP/PPL</a></li>
+  <button id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showPage('home');closeMenu()" id="nav-home" class="active">Beranda</a></li>
+    <li><a onclick="showPage('kebijakan');closeMenu()" id="nav-kebijakan">Kebijakan</a></li>
+    <li><a onclick="showPage('template');closeMenu()" id="nav-template">Template & Logbook</a></li>
+    <li><a onclick="showPage('status');closeMenu()" id="nav-status">Cek Status</a></li>
+    <li><a onclick="showFormSimb();closeMenu()" id="nav-daftar" class="nav-daftar">Daftar SIM-B</a></li>
   </ul>
 </nav>
 
@@ -1244,6 +1266,9 @@ function closeModal(id) {
 }
 
 
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('open');
+}
 function toggleMenu() {
   const nav = document.getElementById('navLinks');
   nav.classList.toggle('open');
