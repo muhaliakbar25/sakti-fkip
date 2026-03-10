@@ -278,20 +278,77 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
 .footer-info { font-size:0.8rem; line-height:1.6; text-align:right; }
 
 /* ======= RESPONSIVE ======= */
+/* ── TABLET (max 1024px) ── */
+@media(max-width:1024px){
+  .section,.form-wrap,.keb-wrap,.tmpl-wrap,.status-wrap { padding:56px 32px; }
+  .hero { padding:64px 32px 72px; }
+  nav { padding:0 28px; }
+  .program-grid { grid-template-columns: repeat(2, 1fr); }
+  .tmpl-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { gap:32px; }
+}
+
+/* ── MOBILE (max 768px) ── */
 @media(max-width:768px){
+  /* Topbar & Nav */
   .topbar { display:none; }
-  nav { padding:0 20px; }
+  nav { padding:0 16px; height:60px; }
   .nav-links { display:none; }
-  .hero { padding:48px 20px 56px; }
-  .hero-inner { grid-template-columns:1fr; gap:32px; }
-  .stats { padding:24px 20px; }
-  .section,.form-wrap,.keb-wrap,.tmpl-wrap,.status-wrap { padding:48px 20px; }
-  .frow { grid-template-columns:1fr; }
-  .footer-inner { flex-direction:column; text-align:center; }
+  .logo-text .logo-name { font-size:1rem; }
+  .logo-text .logo-sub { font-size:0.7rem; }
+
+  /* Hero */
+  .hero { padding:40px 16px 48px; }
+  .hero-inner { grid-template-columns:1fr; gap:24px; }
+  .hero h1 { font-size:2.2rem; }
+  .hero-btns { flex-direction:column; gap:10px; }
+  .hero-btns .btn { width:100%; text-align:center; justify-content:center; }
+  .hero-video { min-height:200px; }
+
+  /* Programs */
+  .program-grid { grid-template-columns:1fr; gap:16px; }
+  .prog-card { padding:20px 16px; }
+
+  /* Alur */
+  .section { padding:40px 16px; }
+  .keb-wrap,.tmpl-wrap,.status-wrap,.form-wrap { padding:32px 16px; }
+  .sec-title { font-size:1.8rem; }
+
+  /* Template grid */
+  .tmpl-grid { grid-template-columns:1fr; gap:12px; }
+
+  /* Cek Status */
+  .search-box { flex-direction:column; gap:10px; }
+  .search-box input { width:100%; border-radius:10px; }
+  .search-btn { width:100%; border-radius:10px; }
+  .status-table-wrap { overflow-x:auto; }
+  .status-table { min-width:520px; font-size:0.8rem; }
+
+  /* Kebijakan */
+  .acc-head { font-size:0.88rem; padding:14px 16px; }
+
+  /* Footer */
+  .footer-inner { flex-direction:column; text-align:center; gap:16px; padding:28px 16px; }
   .footer-info { text-align:center; }
-  .sekolah-grid { grid-template-columns:1fr; }
-  .form-header { padding:28px 24px; }
-  .fcard { padding:24px 20px; }
+
+  /* Form */
+  .form-header { padding:24px 16px; }
+  .fcard { padding:20px 16px; }
+  .frow { grid-template-columns:1fr; }
+  .step-bar { gap:4px; padding:16px; overflow-x:auto; }
+  .step-label { display:none; }
+
+  /* Modal */
+  .modal { padding:28px 20px; margin:20px; }
+}
+
+/* ── SMALL MOBILE (max 420px) ── */
+@media(max-width:420px){
+  .hero h1 { font-size:1.8rem; }
+  .sec-title { font-size:1.5rem; }
+  .prog-card { padding:16px 14px; }
+  nav { height:56px; }
+  .logo-box img { width:32px; height:32px; }
 }
 
   .hero-bg-overlay {
@@ -304,6 +361,28 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
     z-index: 0;
     pointer-events: none;
   }
+
+@media(max-width:768px){
+  #hamburger { display:flex !important; }
+  #navLinks { 
+    display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    right:0;
+    background:rgba(255,255,255,0.97);
+    backdrop-filter:blur(12px);
+    flex-direction:column;
+    padding:16px 20px;
+    gap:4px;
+    border-bottom:1px solid var(--cream-dark);
+    box-shadow:0 8px 24px rgba(13,33,55,0.1);
+    z-index:100;
+  }
+  #navLinks.open { display:flex; }
+  #navLinks a { padding:12px 8px; border-radius:8px; font-size:1rem; }
+  .nav-cta { display:none; }
+}
 </style>
 </head>
 <body style="position:relative;">
@@ -1163,6 +1242,20 @@ function bukaTemplate(name) {
 function closeModal(id) {
   document.getElementById(id).classList.remove('show');
 }
+
+
+function toggleMenu() {
+  const nav = document.getElementById('navLinks');
+  nav.classList.toggle('open');
+}
+// Close menu when a link is clicked
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('#navLinks a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+});
 
 // ======= INIT =======
 document.addEventListener('DOMContentLoaded', function() {
