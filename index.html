@@ -109,7 +109,7 @@ nav { background:rgba(255,255,255,0.82); backdrop-filter:blur(12px); -webkit-bac
 
 /* Program Grid */
 .program-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-.prog-card { background:var(--white); border-radius:var(--r); padding:28px; box-shadow:var(--sh); border:2px solid transparent; transition:all 0.3s; position:relative; overflow:hidden; }
+.prog-card { background:var(--white); border-radius:var(--r); padding:28px; box-shadow:var(--sh); border:2px solid transparent; transition:all 0.3s; position:relative; overflow:hidden; display:flex; flex-direction:column; }
 .prog-card.aktif { cursor:pointer; }
 .prog-card.aktif:hover { border-color:#c9ddf5; box-shadow:0 12px 40px rgba(13,33,55,0.15); transform:translateY(-4px); }
 .prog-card.nonaktif { opacity:0.6; cursor:not-allowed; }
@@ -118,12 +118,12 @@ nav { background:rgba(255,255,255,0.82); backdrop-filter:blur(12px); -webkit-bac
 .prog-icon.dim { background:linear-gradient(135deg,#94a3b8,#cbd5e1); }
 .prog-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700; color:var(--navy); margin-bottom:8px; }
 .prog-card p { font-size:0.83rem; color:var(--muted); line-height:1.6; margin-bottom:16px; }
-.prog-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+.prog-tags { margin-top:auto; display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
 .tag { background:var(--cream-mid); color:var(--navy); padding:3px 9px; border-radius:3px; font-size:0.71rem; font-weight:600; letter-spacing:0.3px; border:1px solid var(--cream-dark); }
 
-.prog-btn { width:100%; background:var(--navy); color:var(--cream); border:none; padding:11px; border-radius:4px; font-size:0.83rem; font-weight:600; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.18s; letter-spacing:0.3px; }
+.prog-btn { margin-top:auto; width:100%; background:var(--navy); color:var(--cream); border:none; padding:11px; border-radius:4px; font-size:0.83rem; font-weight:600; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.18s; letter-spacing:0.3px; }
 .prog-btn:hover { background:var(--gold); }
-.prog-btn-cs { width:100%; background:var(--cream-mid); color:var(--muted); border:1px solid var(--cream-dark); padding:11px; border-radius:4px; font-size:0.8rem; font-weight:500; cursor:not-allowed; font-family:'DM Sans',sans-serif; display:flex; align-items:center; justify-content:center; gap:8px; }
+.prog-btn-cs { margin-top:auto; width:100%; background:var(--cream-mid); color:var(--muted); border:1px solid var(--cream-dark); padding:11px; border-radius:4px; font-size:0.8rem; font-weight:500; cursor:not-allowed; font-family:'DM Sans',sans-serif; display:flex; align-items:center; justify-content:center; gap:8px; }
 
 .aktif-badge { position:absolute; top:14px; right:14px; background:var(--green-ok); color:white; font-size:0.63rem; font-weight:700; padding:3px 9px; border-radius:3px; letter-spacing:0.5px; text-transform:uppercase; }
 .cs-card-badge { position:absolute; top:14px; right:14px; background:var(--cream-mid); color:var(--muted); font-size:0.63rem; font-weight:600; padding:3px 9px; border-radius:3px; border:1px solid var(--cream-dark); }
@@ -443,7 +443,7 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
       <div>
         <div class="hero-badge">✦ Sistem Informasi Digital FKIP USN Kolaka</div>
         <h1>Magang Kependidikan<br><em>SAKTI</em> — Digital,<br>Cepat &amp; Mudah</h1>
-        <p>Platform pendaftaran magang kependidikan PJKR FKIP USN Kolaka secara online. Tidak perlu antre, tidak perlu kertas.</p>
+        <p>Platform pendaftaran magang kependidikan mahasiswa FKIP USN Kolaka secara online. Tidak perlu antre, tidak perlu kertas.</p>
         <div class="hero-btns">
           <a class="btn btn-gold" href="https://forms.gle/HZznTZCn7usBxxRWA" target="_blank">Daftar SIM-B Sekarang →</a>
           <button class="btn btn-ghost" onclick="showPage('home')" style="scroll-behavior:smooth;">Lihat Semua Program ↓</button>
@@ -478,14 +478,14 @@ footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:40px; marg
         <div class="prog-tags"><span class="tag">Sem 5+</span><span class="tag">3 SKS</span><span class="tag">1 Semester</span></div>
         <button class="prog-btn">Daftar Sekarang →</button>
       </div>
-<!-- PLP - AKTIF -->
+<!-- PLP - NONAKTIF -->
       <div class="prog-card nonaktif">
-        <div class="nonaktif-badge">🔒 Segera Hadir</div>
-        <div class="prog-icon">🏫</div>
+        <div class="cs-card-badge">🔒 Segera Hadir</div>
+        <div class="prog-icon dim">🏫</div>
         <h3>PLP / PPL</h3>
         <p>Pengenalan Lapangan Persekolahan — praktik mengajar langsung di sekolah mitra.</p>
         <div class="prog-tags"><span class="tag">Sem 5–6</span><span class="tag">4 SKS</span><span class="tag">1 Semester</span></div>
-        <button class="prog-btn">Daftar Sekarang →</button>
+        <div class="prog-btn-cs">🔒 Belum Dibuka</div>
       </div>
 
       <!-- AM - NONAKTIF -->
